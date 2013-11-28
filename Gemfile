@@ -6,7 +6,7 @@ gem 'rails', '3.2.15'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-
+gem 'devise'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -18,6 +18,14 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+end
+
+group :test, :development do
+  gem 'rspec-rails', '~> 3.0.0.beta'
+  gem 'konacha'
+  gem 'shoulda-matchers'
+  gem 'pry-rails'
+  gem "factory_girl_rails"
 end
 
 gem 'jquery-rails'
