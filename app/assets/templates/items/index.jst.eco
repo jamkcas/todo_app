@@ -1,7 +1,11 @@
-<h1>Items</h1>
+<h3>Items</h3>
 
-<ul>
-<% for item in this.items.models: %>
-  <li><%= item.get('title') %></li>
-<% end %>
+<form id='new_item'>
+  <input type='text' id='itemTitle' placeholder='Enter a title...'/>
+  <textarea id='itemContent' placeholder='Enter a description...'></textarea>
+  <input type='text' id='itemColor' placeholder='Enter a color...'/>
+  <input type='submit' value='Add Item'/>
+</form>
+
+<ul id='list'>
 </ul>
