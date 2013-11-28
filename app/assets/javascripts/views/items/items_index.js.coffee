@@ -3,6 +3,7 @@ class Todo.Views.ItemsIndex extends Backbone.View
   template: JST['items/index']
 
   events:
+    # When a new item is submitted it calls the function 'createItem'
     'submit #new_item': 'createItem'
 
   initialize: ->
@@ -10,13 +11,18 @@ class Todo.Views.ItemsIndex extends Backbone.View
     this.collection.on('add', this.render, this)
 
   render: ->
+    # Renders the template 'index.jst.eco'
     $(this.el).html(this.template())
+    # Loops through the collection fetched for this view and calls the 'prependEntry' function
     this.collection.each(this.prependEntry)
+    # Returns the html rendered from this
     this
 
   createItem: (e) ->
+    # Prevents the form from being submitted
     e.preventDefault()
 
+    # Grabs the form values
     title = $('#itemTitle').val()
     content = $('#itemContent').val()
     color = $('#itemColor').val()
