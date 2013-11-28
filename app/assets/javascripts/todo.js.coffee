@@ -5,7 +5,7 @@ window.Todo =
   Routers: {}
   initialize: ->
     new Todo.Routers.Items
-    Backbone.history.start()
+    Backbone.history.start(pushState: true)
 
 $(document).ready ->
   Todo.initialize()

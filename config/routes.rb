@@ -4,4 +4,5 @@ Todo::Application.routes.draw do
   end
 
   root to: 'list#index'
+  match '*path', to: 'list#index'
 end
