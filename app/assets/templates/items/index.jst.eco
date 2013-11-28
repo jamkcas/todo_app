@@ -1,0 +1,7 @@
+<h1>Items</h1>
+
+<ul>
+<% for item in this.items.models: %>
+  <li><%= item.get('title') %></li>
+<% end %>
+</ul>
